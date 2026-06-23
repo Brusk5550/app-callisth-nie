@@ -114,6 +114,13 @@
   margin-bottom: var(--space-8);
 }
 
+.dashboard__header-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
 .dashboard__title {
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
@@ -125,6 +132,102 @@
 .dashboard__subtitle {
   font-size: var(--font-size-md);
   color: var(--color-text-muted);
+}
+
+/* Indicateur progression globale */
+.progression-globale {
+  flex-shrink: 0;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  min-width: 240px;
+}
+
+.progression-globale__label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.progression-globale__niveaux {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.prog-niveau {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.prog-niveau__num {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-alt);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-disabled);
+  transition: all var(--transition-fast);
+}
+
+.prog-niveau--actif .prog-niveau__num {
+  background-color: rgba(230, 57, 70, 0.12);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.prog-niveau--courant .prog-niveau__num {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.prog-niveau__nom {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-disabled);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 56px;
+}
+
+.prog-niveau--actif .prog-niveau__nom,
+.prog-niveau--courant .prog-niveau__nom {
+  color: var(--color-text-muted);
+}
+
+.progression-globale__texte {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .dashboard__header-top {
+    flex-direction: column;
+  }
+
+  .progression-globale {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .prog-niveau__nom {
+    display: none;
+  }
 }
 
 /* Bannière séance du jour */
