@@ -171,3 +171,27 @@ ul, ol {
 #app {
   min-height: 100vh;
 }
+
+/* ============================================================
+   TRANSITIONS DE PAGE
+   ============================================================ */
+.page-exit {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.page-enter {
+  animation: pageEnter 200ms ease forwards;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

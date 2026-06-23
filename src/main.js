@@ -57,8 +57,19 @@ export async function navigate(pageName, params = {}) {
   state.currentPage = pageName
   const { render } = await loader()
   const appEl = document.getElementById('app')
+
+  // Fade out
+  appEl.classList.remove('page-enter')
+  appEl.classList.add('page-exit')
+
+  await new Promise(r => setTimeout(r, 120))
+
   appEl.innerHTML = ''
   render(appEl, params, state)
+
+  // Fade in
+  appEl.classList.remove('page-exit')
+  appEl.classList.add('page-enter')
 }
 
 /**
