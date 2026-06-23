@@ -132,10 +132,12 @@ export function render(container, params, state) {
 // ── Carte exercice ────────────────────────────────────────────────────────────
 
 function _createCard(ex) {
-  const card = document.createElement('article')
+  const card = document.createElement('button')
+  card.type = 'button'
   card.className = 'exercice-card'
   card.setAttribute('role', 'listitem')
-  card.setAttribute('aria-label', ex.nom)
+  card.setAttribute('aria-label', `Voir ${ex.nom}`)
+  card.addEventListener('click', () => navigate('exercice', { exerciceId: ex.id }))
 
   const niveauLabel = ['', 'Débutant', 'Intermédiaire', 'Avancé', 'Élite'][ex.niveauMin] ?? ''
 

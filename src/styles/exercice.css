@@ -1,0 +1,225 @@
+/* ============================================================
+   PAGE EXERCICE (détail)
+   ============================================================ */
+.exercice-page {
+  min-height: calc(100vh - 61px);
+}
+
+.exercice-layout {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-6) var(--space-16);
+}
+
+/* ── Hero ────────────────────────────────────────────────── */
+.exercice-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: start;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-12);
+}
+
+/* Image */
+.exercice-hero__image {
+  position: sticky;
+  top: calc(61px + var(--space-6));
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exercice-hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: var(--space-8);
+  filter: invert(1);
+}
+
+.exercice-hero__image--placeholder::after {
+  content: '?';
+  font-size: 4rem;
+  color: var(--color-text-disabled);
+}
+
+.exercice-hero__image--placeholder img {
+  display: none;
+}
+
+/* Infos */
+.exercice-hero__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.exercice-hero__tags {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.exercice-tag {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+.exercice-tag--cat {
+  background-color: rgba(230, 57, 70, 0.12);
+  color: var(--color-primary);
+}
+
+.exercice-tag--niveau {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+.exercice-hero__nom {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  line-height: var(--line-height-tight);
+}
+
+.exercice-hero__desc {
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+}
+
+/* Muscles */
+.exercice-muscles__title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-3);
+}
+
+.exercice-muscles__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+}
+
+/* ── Exercices liés ──────────────────────────────────────── */
+.exercices-lies {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-8);
+}
+
+.exercices-lies__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+
+.exercices-lies__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+/* Carte liée */
+.lie-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  padding: 0;
+}
+
+.lie-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.lie-card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.lie-card__image {
+  height: 120px;
+  background-color: var(--color-surface-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lie-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: var(--space-3);
+  filter: invert(1);
+}
+
+.lie-card__image--placeholder::after {
+  content: '?';
+  font-size: 2rem;
+  color: var(--color-text-disabled);
+}
+
+.lie-card__image--placeholder img { display: none; }
+
+.lie-card__nom {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  padding: var(--space-3) var(--space-4) var(--space-1);
+}
+
+.lie-card__niveau {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  padding: 0 var(--space-4) var(--space-3);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .exercice-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .exercice-hero__image {
+    position: static;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .exercice-hero__nom {
+    font-size: var(--font-size-2xl);
+  }
+
+  .exercices-lies__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .exercice-layout {
+    padding: var(--space-4) var(--space-4) var(--space-12);
+  }
+
+  .exercices-lies__grid {
+    grid-template-columns: 1fr;
+  }
+}

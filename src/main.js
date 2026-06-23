@@ -30,6 +30,7 @@ const pages = {
   seance:    () => import('./pages/seance.js'),
   test:      () => import('./pages/test.js'),
   glossaire: () => import('./pages/glossaire.js'),
+  exercice:  () => import('./pages/exercice.js'),
 }
 
 // ── Routeur ──────────────────────────────────────────────────────────────────
@@ -45,8 +46,8 @@ export async function navigate(pageName, params = {}) {
     return
   }
 
-  // Garde : glossaire réservé aux connectés
-  if (pageName === 'glossaire' && !state.isLoggedIn) {
+  // Garde : glossaire et exercice réservés aux connectés
+  if ((pageName === 'glossaire' || pageName === 'exercice') && !state.isLoggedIn) {
     navigate('login')
     return
   }
