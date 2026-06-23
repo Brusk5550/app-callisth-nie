@@ -1,1 +1,276 @@
-/* Styles du mode séance & timer */
+/* ============================================================
+   PAGE SÉANCE
+   ============================================================ */
+.seance-page {
+  min-height: calc(100vh - 61px); /* hauteur nav */
+  display: flex;
+  flex-direction: column;
+}
+
+.seance-layout {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  width: 100%;
+  padding: var(--space-6) var(--space-6) var(--space-12);
+}
+
+/* ── En-tête ─────────────────────────────────────────────── */
+.seance-header {
+  margin-bottom: var(--space-8);
+}
+
+.seance-header .btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+  padding: var(--space-2) 0;
+  transition: color var(--transition-fast);
+}
+
+.seance-header .btn-back:hover { color: var(--color-text); }
+.seance-header .btn-back:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.seance-header__niveau {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+.seance-header__nom {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+
+.seance-global-progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* ── Zone principale ─────────────────────────────────────── */
+.seance-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Phase exercice ──────────────────────────────────────── */
+.phase-exercice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  text-align: center;
+  flex: 1;
+  padding-top: var(--space-4);
+}
+
+/* Dots séries */
+.serie-counter {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.serie-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  transition: background-color var(--transition-fast);
+}
+
+.serie-dot--active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.serie-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-medium);
+  margin-top: calc(var(--space-2) * -1);
+}
+
+.exercice-nom {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  line-height: var(--line-height-tight);
+}
+
+.exercice-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  max-width: 480px;
+  line-height: var(--line-height-normal);
+}
+
+/* Timer */
+.timer-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  margin: var(--space-4) 0;
+}
+
+.timer-value {
+  font-size: 5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.timer-unit {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.timer-controls {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+/* Reps */
+.reps-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  margin: var(--space-4) 0;
+}
+
+.reps-value {
+  font-size: 6rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.reps-unit {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+}
+
+/* Bouton large */
+.btn--lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--font-size-lg);
+  border-radius: var(--radius-lg);
+}
+
+/* ── Phase repos ─────────────────────────────────────────── */
+.phase-repos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  text-align: center;
+  flex: 1;
+  padding-top: var(--space-4);
+}
+
+.repos-label {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-medium);
+}
+
+.repos-next {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-4);
+}
+
+.repos-next strong {
+  color: var(--color-text);
+}
+
+/* Timer repos — couleur différente */
+.phase-repos .timer-value {
+  color: var(--color-success);
+}
+
+/* ── Phase terminé ───────────────────────────────────────── */
+.phase-done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+  flex: 1;
+  padding-top: var(--space-12);
+}
+
+.done-icon {
+  width: 72px;
+  height: 72px;
+  color: var(--color-success);
+  margin-bottom: var(--space-4);
+}
+
+.done-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.done-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.done-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+}
+
+.done-meta {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.done-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+  width: 100%;
+  max-width: 300px;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .seance-layout {
+    padding: var(--space-4) var(--space-4) var(--space-8);
+  }
+
+  .timer-value {
+    font-size: 4rem;
+  }
+
+  .reps-value {
+    font-size: 5rem;
+  }
+}
