@@ -7,17 +7,17 @@
  * @param {object} handlers - { onGlossaire, onLogout }
  */
 
-export function createNav(container, state, { onGlossaire, onLogout }) {
+export function createNav(container, state, { onHome, onGlossaire, onLogout }) {
   const nav = document.createElement('nav')
   nav.className = 'main-nav'
   nav.setAttribute('aria-label', 'Navigation principale')
 
   nav.innerHTML = `
     <div class="nav-inner">
-      <div class="nav-brand">
+      <button type="button" class="nav-brand" id="nav-home" aria-label="Retour au tableau de bord">
         <span class="nav-brand__logo" aria-hidden="true">C</span>
         <span class="nav-brand__name">Cali</span>
-      </div>
+      </button>
 
       <ul class="nav-links" role="list">
         <li>
@@ -32,13 +32,13 @@ export function createNav(container, state, { onGlossaire, onLogout }) {
               <polyline points="16 17 21 12 16 7"/>
               <line x1="21" y1="12" x2="9" y2="12"/>
             </svg>
-            <span>Déconnexion</span>
           </button>
         </li>
       </ul>
     </div>
   `
 
+  nav.querySelector('#nav-home').addEventListener('click', onHome ?? (() => {}))
   nav.querySelector('#nav-glossaire').addEventListener('click', onGlossaire)
   nav.querySelector('#nav-logout').addEventListener('click', onLogout)
 

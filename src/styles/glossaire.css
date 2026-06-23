@@ -1,1 +1,261 @@
-/* Styles du glossaire */
+/* ============================================================
+   PAGE GLOSSAIRE
+   ============================================================ */
+.glossaire-page {
+  min-height: calc(100vh - 61px);
+}
+
+.glossaire-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6) var(--space-16);
+}
+
+/* ── En-tête ─────────────────────────────────────────────── */
+.glossaire-header {
+  margin-bottom: var(--space-8);
+}
+
+.glossaire-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.glossaire-subtitle {
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+}
+
+/* ── Recherche ───────────────────────────────────────────── */
+.glossaire-search-wrap {
+  position: relative;
+  margin-bottom: var(--space-4);
+}
+
+.glossaire-search {
+  width: 100%;
+  padding: var(--space-3) var(--space-4) var(--space-3) var(--space-10);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+  font-family: inherit;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.glossaire-search::placeholder {
+  color: var(--color-text-disabled);
+}
+
+.glossaire-search:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+}
+
+/* Supprime le bouton natif de l'input search */
+.glossaire-search::-webkit-search-cancel-button { display: none; }
+
+.search-icon {
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+/* ── Filtres ─────────────────────────────────────────────── */
+.glossaire-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.filter-btn {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  transition: color var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.filter-btn:hover {
+  color: var(--color-text);
+  border-color: #3e3e3e;
+}
+
+.filter-btn--active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.filter-btn--active:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.filter-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Compteur */
+.glossaire-count {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+/* Message vide */
+.glossaire-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: var(--space-12) 0;
+}
+
+/* ── Grille ──────────────────────────────────────────────── */
+.glossaire-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-4);
+}
+
+/* ── Carte exercice ──────────────────────────────────────── */
+.exercice-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.exercice-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+/* Zone image */
+.exercice-card__image {
+  position: relative;
+  height: 180px;
+  background-color: var(--color-surface-alt);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exercice-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: var(--space-4);
+  filter: invert(1); /* images N&B sur fond sombre */
+}
+
+/* Placeholder si image manquante */
+.exercice-card__image--placeholder::after {
+  content: '?';
+  font-size: 3rem;
+  color: var(--color-text-disabled);
+}
+
+.exercice-card__image--placeholder img {
+  display: none;
+}
+
+/* Badge catégorie */
+.exercice-card__categorie {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--color-text);
+  backdrop-filter: blur(4px);
+}
+
+/* Corps de la carte */
+.exercice-card__body {
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.exercice-card__meta {
+  display: flex;
+  align-items: center;
+}
+
+.exercice-card__niveau {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-medium);
+}
+
+.exercice-card__nom {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  line-height: var(--line-height-tight);
+}
+
+.exercice-card__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+}
+
+/* Tags muscles */
+.exercice-card__muscles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+}
+
+.muscle-tag {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 2px var(--space-2);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .glossaire-layout {
+    padding: var(--space-6) var(--space-4) var(--space-12);
+  }
+
+  .glossaire-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .glossaire-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .glossaire-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -32,6 +32,7 @@ export function render(container, params, state) {
   container.innerHTML = ''
 
   createNav(container, state, {
+    onHome: () => navigate('dashboard'),
     onGlossaire: () => navigate('glossaire'),
     onLogout:    () => logout(),
   })

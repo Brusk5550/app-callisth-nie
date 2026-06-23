@@ -13,6 +13,7 @@ export function render(container, params, state) {
 
   // ── Navigation ────────────────────────────────────────────────────────────
   createNav(container, state, {
+    onHome: () => navigate('dashboard'),
     onGlossaire: () => navigate('glossaire'),
     onLogout: () => logout(),
   })

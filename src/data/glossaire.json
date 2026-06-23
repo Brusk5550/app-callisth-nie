@@ -1,1 +1,371 @@
-[]
+[
+  {
+    "id": "pompes-genoux",
+    "nom": "Pompes genoux",
+    "categorie": "poussee",
+    "niveauMin": 1,
+    "image": "pompes-genoux.png",
+    "description": "Version facilitée de la pompe classique. Appui sur les genoux et les mains, corps aligné des genoux aux épaules. Coudes à 45° du buste lors de la descente. Idéal pour construire la force pectorale et tricipitale avant d'aborder les pompes strictes.",
+    "muscles": ["Pectoraux", "Triceps", "Deltoïdes antérieurs"]
+  },
+  {
+    "id": "pompes-strictes",
+    "nom": "Pompes strictes",
+    "categorie": "poussee",
+    "niveauMin": 1,
+    "image": "pompes-strictes.png",
+    "description": "La pompe fondamentale. Corps parfaitement aligné des pieds aux épaules, coudes à 45°, amplitude complète. Le mouvement de référence de la poussée en callisthénie.",
+    "muscles": ["Pectoraux", "Triceps", "Deltoïdes antérieurs", "Core"]
+  },
+  {
+    "id": "pompes-diamant",
+    "nom": "Pompes diamant",
+    "categorie": "poussee",
+    "niveauMin": 2,
+    "image": "pompes-diamant.png",
+    "description": "Mains rapprochées formant un losange sous la poitrine. Coudes restent proches du corps tout au long du mouvement. Accent fort sur les triceps et le faisceau sternal des pectoraux.",
+    "muscles": ["Triceps", "Pectoraux (faisceau sternal)", "Deltoïdes antérieurs"]
+  },
+  {
+    "id": "pompes-decline",
+    "nom": "Pompes déclinées",
+    "categorie": "poussee",
+    "niveauMin": 2,
+    "image": "pompes-decline.png",
+    "description": "Pieds surélevés sur une chaise ou un banc, mains au sol. L'inclinaison vers l'avant cible davantage le haut des pectoraux et les épaules. Plus la hauteur est grande, plus l'accent est mis sur les deltoïdes.",
+    "muscles": ["Pectoraux (faisceau claviculaire)", "Deltoïdes antérieurs", "Triceps"]
+  },
+  {
+    "id": "pompes-pike",
+    "nom": "Pompes pike",
+    "categorie": "poussee",
+    "niveauMin": 1,
+    "image": "pompes-pike.png",
+    "description": "Hanches levées pour former un V inversé avec le corps. La tête descend entre les mains puis remonte. Cible principalement les épaules. Progression vers le handstand push-up.",
+    "muscles": ["Deltoïdes", "Triceps", "Trapèzes"]
+  },
+  {
+    "id": "pompes-pike-elevation",
+    "nom": "Pompes pike sur élévation",
+    "categorie": "poussee",
+    "niveauMin": 3,
+    "image": "pompes-pike-elevation.png",
+    "description": "Version avancée des pompes pike : pieds surélevés pour augmenter l'angle et la charge sur les épaules. Préparation directe au handstand push-up contre un mur.",
+    "muscles": ["Deltoïdes", "Triceps", "Trapèzes"]
+  },
+  {
+    "id": "pompes-piques",
+    "nom": "Pompes piquées (HSPU)",
+    "categorie": "poussee",
+    "niveauMin": 4,
+    "image": "pompes-piques.png",
+    "description": "Handstand push-up contre un mur. En équilibre sur les mains, dos au mur, descendre la tête jusqu'au sol et repousser. Mouvement d'élite ciblant massivement les épaules.",
+    "muscles": ["Deltoïdes", "Triceps", "Trapèzes supérieurs"]
+  },
+  {
+    "id": "pompes-archer",
+    "nom": "Pompes archer",
+    "categorie": "poussee",
+    "niveauMin": 3,
+    "image": "pompes-archer.png",
+    "description": "Une main à largeur d'épaule, l'autre tendue sur le côté. Le côté actif effectue la pompe pendant que le bras tendu glisse latéralement. Progression vers la pompe à un bras.",
+    "muscles": ["Pectoraux", "Triceps", "Deltoïdes (unilatéral)"]
+  },
+  {
+    "id": "pseudo-planche-push-up",
+    "nom": "Pseudo planche push-up",
+    "categorie": "poussee",
+    "niveauMin": 4,
+    "image": "pseudo-planche-push-up.png",
+    "description": "Pompes avec les mains au niveau des hanches, doigts pointés vers les pieds. Le corps est légèrement incliné vers l'avant. Prépare les épaules et poignets à la position planche.",
+    "muscles": ["Pectoraux inférieurs", "Deltoïdes", "Biceps (allongement)"]
+  },
+  {
+    "id": "dips-chaise",
+    "nom": "Dips sur chaise",
+    "categorie": "poussee",
+    "niveauMin": 1,
+    "image": "dips-chaise.png",
+    "description": "Mains posées sur le bord d'une chaise solide, dos proche du siège. Descendre jusqu'à ce que les bras forment 90°. Version accessible des dips pour débutants.",
+    "muscles": ["Triceps", "Pectoraux inférieurs", "Deltoïdes antérieurs"]
+  },
+  {
+    "id": "dips-paralleles",
+    "nom": "Dips parallèles",
+    "categorie": "poussee",
+    "niveauMin": 2,
+    "image": "dips-paralleles.png",
+    "description": "Sur barres parallèles, corps légèrement penché en avant pour cibler les pectoraux. Descendre jusqu'à 90° de flexion des coudes, puis repousser jusqu'à l'extension complète.",
+    "muscles": ["Triceps", "Pectoraux (faisceau sternal)", "Deltoïdes antérieurs"]
+  },
+  {
+    "id": "dips-profonds",
+    "nom": "Dips profonds",
+    "categorie": "poussee",
+    "niveauMin": 3,
+    "image": "dips-profonds.png",
+    "description": "Dips avec une amplitude maximale, descendant jusqu'à ce que les épaules passent sous les coudes. Développe une mobilité d'épaule importante et une force tricipitale extrême.",
+    "muscles": ["Triceps", "Pectoraux", "Deltoïdes antérieurs"]
+  },
+  {
+    "id": "dips-lestes",
+    "nom": "Dips lestés",
+    "categorie": "poussee",
+    "niveauMin": 3,
+    "image": "dips-lestes.png",
+    "description": "Dips sur barres parallèles avec charge supplémentaire (ceinture lestée ou sac à dos). Progression de force pure une fois le poids du corps maîtrisé.",
+    "muscles": ["Triceps", "Pectoraux", "Deltoïdes antérieurs"]
+  },
+  {
+    "id": "rowing-table",
+    "nom": "Rowing sur table",
+    "categorie": "traction",
+    "niveauMin": 1,
+    "image": "rowing-table.png",
+    "description": "Allongé sous une table solide, saisir le bord et tirer la poitrine vers le haut. Le corps reste aligné, seuls les bras travaillent. Excellent exercice de traction accessible sans barre.",
+    "muscles": ["Grand dorsal", "Biceps", "Rhomboïdes", "Trapèzes moyens"]
+  },
+  {
+    "id": "tractions-assistees",
+    "nom": "Tractions assistées à la bande",
+    "categorie": "traction",
+    "niveauMin": 1,
+    "image": "tractions-assistees.png",
+    "description": "Bande élastique passée autour des genoux ou des pieds, accrochée à la barre. La bande réduit le poids à soulever. Permet de développer le mouvement de traction progressivement.",
+    "muscles": ["Grand dorsal", "Biceps", "Rhomboïdes"]
+  },
+  {
+    "id": "tractions-prise-large",
+    "nom": "Tractions prise large",
+    "categorie": "traction",
+    "niveauMin": 2,
+    "image": "tractions-prise-large.png",
+    "description": "Prise pronation (paumes vers l'avant) plus large que la largeur des épaules. Tirer les coudes vers le bas et l'arrière, menton au-dessus de la barre. Cible l'aisselle du grand dorsal.",
+    "muscles": ["Grand dorsal (portion externe)", "Biceps", "Trapèzes moyens"]
+  },
+  {
+    "id": "tractions-prise-serree",
+    "nom": "Tractions prise serrée",
+    "categorie": "traction",
+    "niveauMin": 2,
+    "image": "tractions-prise-serree.png",
+    "description": "Mains rapprochées en prise pronation. Accent sur le bas du grand dorsal et les biceps. Utile pour compléter le travail de la prise large.",
+    "muscles": ["Grand dorsal (portion interne)", "Biceps", "Teres major"]
+  },
+  {
+    "id": "tractions-supination",
+    "nom": "Tractions en supination (chin-up)",
+    "categorie": "traction",
+    "niveauMin": 2,
+    "image": "tractions-supination.png",
+    "description": "Prise paumes vers soi, largeur d'épaules. Implique davantage les biceps que la prise pronation. Souvent plus facile pour débuter les tractions strictes.",
+    "muscles": ["Biceps", "Grand dorsal", "Rhomboïdes"]
+  },
+  {
+    "id": "tractions-lestees",
+    "nom": "Tractions lestées",
+    "categorie": "traction",
+    "niveauMin": 3,
+    "image": "tractions-lestees.png",
+    "description": "Tractions avec ceinture lestée ou sac à dos. Progression de force pure une fois le poids du corps maîtrisé. Indispensable pour progresser vers des mouvements de skill.",
+    "muscles": ["Grand dorsal", "Biceps", "Rhomboïdes", "Trapèzes"]
+  },
+  {
+    "id": "tractions-tempo",
+    "nom": "Tractions tempo",
+    "categorie": "traction",
+    "niveauMin": 3,
+    "image": "tractions-tempo.png",
+    "description": "Tractions effectuées avec un tempo contrôlé (ex : 3s montée, 1s pause, 3s descente). Développe la force dans toute l'amplitude et le contrôle neuromusculaire.",
+    "muscles": ["Grand dorsal", "Biceps", "Rhomboïdes"]
+  },
+  {
+    "id": "tractions-explosives",
+    "nom": "Tractions explosives",
+    "categorie": "traction",
+    "niveauMin": 3,
+    "image": "tractions-explosives.png",
+    "description": "Tractions effectuées avec une poussée maximalement explosive vers le haut. L'objectif est de dépasser la barre avec les coudes. Pré-requis au muscle-up.",
+    "muscles": ["Grand dorsal", "Biceps", "Trapèzes"]
+  },
+  {
+    "id": "deadhang",
+    "nom": "Deadhang",
+    "categorie": "traction",
+    "niveauMin": 1,
+    "image": "deadhang.png",
+    "description": "Suspension passive à la barre, épaules actives (légèrement rétractées), corps détendu. Renforce la prise, les tendons des épaules et la mobilité. Exercice de santé fondamental.",
+    "muscles": ["Avant-bras", "Épaules (stabilisateurs)", "Core"]
+  },
+  {
+    "id": "rowing-anneau",
+    "nom": "Rowing sur anneaux",
+    "categorie": "traction",
+    "niveauMin": 3,
+    "image": "rowing-anneau.png",
+    "description": "Rowing effectué sur anneaux de gymnastique ou TRX. L'instabilité des anneaux sollicite davantage les stabilisateurs. Idéal pour renforcer les muscles de la coiffe des rotateurs.",
+    "muscles": ["Grand dorsal", "Rhomboïdes", "Coiffe des rotateurs", "Biceps"]
+  },
+  {
+    "id": "tractions-front-lever",
+    "nom": "Tractions front lever",
+    "categorie": "traction",
+    "niveauMin": 3,
+    "image": "tractions-front-lever.png",
+    "description": "En position front lever tuck, effectuer une traction en maintenant le corps horizontal. Combine force de traction et force de gainage isométrique.",
+    "muscles": ["Grand dorsal", "Biceps", "Abdominaux", "Iliopsoas"]
+  },
+  {
+    "id": "superman",
+    "nom": "Superman",
+    "categorie": "gainage",
+    "niveauMin": 1,
+    "image": "superman.png",
+    "description": "Allongé ventre au sol, lever simultanément bras et jambes tendus, tenir 2 secondes. Renforce les muscles extenseurs du dos, souvent négligés en callisthénie.",
+    "muscles": ["Érecteurs spinaux", "Fessiers", "Ischio-jambiers"]
+  },
+  {
+    "id": "gainage-frontal",
+    "nom": "Gainage frontal",
+    "categorie": "gainage",
+    "niveauMin": 1,
+    "image": "gainage-frontal.png",
+    "description": "Appui sur les avant-bras et les orteils, corps parfaitement aligné. Abdominaux et fessiers contractés. La base de tout travail de gainage en callisthénie.",
+    "muscles": ["Abdominaux transverses", "Obliques", "Fessiers", "Deltoïdes"]
+  },
+  {
+    "id": "gainage-lateral",
+    "nom": "Gainage latéral",
+    "categorie": "gainage",
+    "niveauMin": 1,
+    "image": "gainage-lateral.png",
+    "description": "Appui sur un avant-bras, corps de profil, hanche levée. Corps aligné de la tête aux pieds. Cible les obliques et les stabilisateurs latéraux du tronc.",
+    "muscles": ["Obliques", "Fessiers moyens", "Carré des lombes"]
+  },
+  {
+    "id": "hollow-body-hold",
+    "nom": "Hollow body hold",
+    "categorie": "gainage",
+    "niveauMin": 2,
+    "image": "hollow-body-hold.png",
+    "description": "Allongé sur le dos, bas du dos plaqué au sol, bras et jambes tendus légèrement décollés. La position fondamentale de la gymnastique. Base de nombreux skills avancés.",
+    "muscles": ["Abdominaux", "Iliopsoas", "Obliques"]
+  },
+  {
+    "id": "dragon-flag-negatif",
+    "nom": "Dragon flag négatif",
+    "categorie": "gainage",
+    "niveauMin": 2,
+    "image": "dragon-flag-negatif.png",
+    "description": "Allongé sur un banc, saisir l'arrière avec les mains. Corps rigide, descendre lentement depuis la verticale en 4 secondes. Gainage extrême rendu célèbre par Bruce Lee.",
+    "muscles": ["Abdominaux", "Iliopsoas", "Érecteurs spinaux"]
+  },
+  {
+    "id": "l-sit-progression",
+    "nom": "L-sit progression (jambes pliées)",
+    "categorie": "gainage",
+    "niveauMin": 2,
+    "image": "l-sit-progression.png",
+    "description": "Appui sur les mains au sol, genoux remontés à hauteur de hanche, fessiers décollés. Progression vers le L-sit complet. Développe la compression des hanches et la force des épaules.",
+    "muscles": ["Iliopsoas", "Abdominaux", "Triceps", "Trapèzes"]
+  },
+  {
+    "id": "l-sit",
+    "nom": "L-sit",
+    "categorie": "gainage",
+    "niveauMin": 3,
+    "image": "l-sit.png",
+    "description": "Appui sur les mains, jambes tendues horizontales formant un L avec le buste. Exige à la fois la force des épaules, la compression des hanches et la force des abdominaux.",
+    "muscles": ["Iliopsoas", "Abdominaux", "Triceps", "Trapèzes", "Ischio-jambiers"]
+  },
+  {
+    "id": "l-sit-v-sit",
+    "nom": "L-sit vers V-sit",
+    "categorie": "gainage",
+    "niveauMin": 4,
+    "image": "l-sit-v-sit.png",
+    "description": "Partir du L-sit et tenter de pousser les jambes au-dessus de l'horizontale, formant un V avec le corps. Exige une compression des hanches et une force abdominale élites.",
+    "muscles": ["Iliopsoas", "Abdominaux", "Fléchisseurs des hanches"]
+  },
+  {
+    "id": "front-lever-tuck",
+    "nom": "Front lever tuck",
+    "categorie": "skill",
+    "niveauMin": 3,
+    "image": "front-lever-tuck.png",
+    "description": "Suspendu à la barre, genoux ramenés à la poitrine, corps horizontal face au ciel. Les épaules doivent être actives et en dépression. Première étape du front lever complet.",
+    "muscles": ["Grand dorsal", "Abdominaux", "Biceps", "Rhomboïdes"]
+  },
+  {
+    "id": "front-lever-avance",
+    "nom": "Front lever avancé",
+    "categorie": "skill",
+    "niveauMin": 4,
+    "image": "front-lever-avance.png",
+    "description": "Une jambe tendue, l'autre pliée — progression intermédiaire vers le front lever complet (les deux jambes tendues). Demande une force dorsale considérable.",
+    "muscles": ["Grand dorsal", "Abdominaux", "Biceps", "Rhomboïdes"]
+  },
+  {
+    "id": "muscle-up-bande",
+    "nom": "Muscle-up à la bande",
+    "categorie": "skill",
+    "niveauMin": 3,
+    "image": "muscle-up-bande.png",
+    "description": "Bande élastique pour assister le passage de la traction aux dips en une seule traction explosive. Permet d'apprendre la coordination du mouvement avant d'effectuer le muscle-up strict.",
+    "muscles": ["Grand dorsal", "Biceps", "Triceps", "Pectoraux"]
+  },
+  {
+    "id": "muscle-up-barre",
+    "nom": "Muscle-up à la barre",
+    "categorie": "skill",
+    "niveauMin": 4,
+    "image": "muscle-up-barre.png",
+    "description": "Traction explosive permettant de passer au-dessus de la barre et d'enchaîner un dip. Le mouvement iconique de la callisthénie. Exige force, explosivité et coordination.",
+    "muscles": ["Grand dorsal", "Biceps", "Triceps", "Pectoraux", "Core"]
+  },
+  {
+    "id": "muscle-up-anneaux",
+    "nom": "Muscle-up aux anneaux",
+    "categorie": "skill",
+    "niveauMin": 4,
+    "image": "muscle-up-anneaux.png",
+    "description": "Muscle-up effectué sur anneaux de gymnastique. Plus difficile que la barre en raison de l'instabilité des anneaux. Le mouvement de référence en gymnastique artistique masculine.",
+    "muscles": ["Grand dorsal", "Biceps", "Triceps", "Pectoraux", "Stabilisateurs d'épaule"]
+  },
+  {
+    "id": "planche-tuck",
+    "nom": "Planche tuck",
+    "categorie": "skill",
+    "niveauMin": 4,
+    "image": "planche-tuck.png",
+    "description": "Appui sur les mains, genoux ramenés, corps légèrement incliné vers l'avant, épaules en forte protraction. Premier pas vers la planche complète — l'un des mouvements les plus difficiles de la callisthénie.",
+    "muscles": ["Pectoraux", "Deltoïdes antérieurs", "Biceps (allongement)", "Core"]
+  },
+  {
+    "id": "back-lever-tuck",
+    "nom": "Back lever tuck",
+    "categorie": "skill",
+    "niveauMin": 4,
+    "image": "back-lever-tuck.png",
+    "description": "Suspendu à la barre, rotation arrière, corps horizontal face au sol, genoux ramenés. Mouvement de force en tension de l'épaule. Requiert une bonne préparation des épaules.",
+    "muscles": ["Biceps", "Pectoraux", "Deltoïdes antérieurs", "Abdominaux"]
+  },
+  {
+    "id": "squat",
+    "nom": "Squat",
+    "categorie": "jambes",
+    "niveauMin": 1,
+    "image": "squat.png",
+    "description": "Pieds largeur d'épaules, descendre les cuisses parallèles au sol, genoux dans l'axe des orteils. Le mouvement fondamental pour les jambes. Base de toute préparation physique.",
+    "muscles": ["Quadriceps", "Fessiers", "Ischio-jambiers", "Mollets"]
+  },
+  {
+    "id": "fentes-alternees",
+    "nom": "Fentes alternées",
+    "categorie": "jambes",
+    "niveauMin": 1,
+    "image": "fentes-alternees.png",
+    "description": "Grand pas en avant, genou arrière proche du sol sans le toucher, revenir à la position initiale. Travail unilatéral des jambes, excellent pour l'équilibre et la coordination.",
+    "muscles": ["Quadriceps", "Fessiers", "Ischio-jambiers", "Mollets"]
+  }
+]

@@ -41,6 +41,7 @@ export function render(container, params, state) {
   container.innerHTML = ''
 
   createNav(container, state, {
+    onHome:      () => { session.timer?.destroy(); navigate('dashboard') },
     onGlossaire: () => { session.timer?.destroy(); navigate('glossaire') },
     onLogout:    () => { session.timer?.destroy(); logout() },
   })

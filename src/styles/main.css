@@ -127,6 +127,32 @@ ul, ol {
   color: var(--color-text-muted);
 }
 
+/* Bouton retour partagé */
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+  padding: var(--space-2) 0;
+  transition: color var(--transition-fast);
+}
+
+.btn-back:hover { color: var(--color-text); }
+
+.btn-back:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.back-icon {
+  width: 18px;
+  height: 18px;
+}
+
 /* ============================================================
    UTILITAIRES GLOBAUX
    ============================================================ */
