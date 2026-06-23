@@ -165,9 +165,11 @@ function _renderExercice(mainEl, session, seance, exercice, niveau, state, param
           <span class="timer-value" id="timer-value">${formatTime(exercice.dureeSecRep)}</span>
           <span class="timer-unit">secondes</span>
         </div>
-        <div class="timer-controls">
-          <button type="button" class="btn btn--ghost btn--sm" id="btn-pause">Pause</button>
-          <button type="button" class="btn btn--primary" id="btn-valider">Terminé</button>
+        <!-- État initial : bouton démarrer -->
+        <div class="timer-controls" id="timer-controls">
+          <button type="button" class="btn btn--primary btn--lg" id="btn-demarrer">
+            Démarrer
+          </button>
         </div>
       ` : `
         <div class="reps-display" aria-label="${exercice.reps} répétitions">
@@ -191,32 +193,41 @@ function _renderExercice(mainEl, session, seance, exercice, niveau, state, param
     })
   }
 
-  // Timer automatique pour les exercices chronométrés
+  // Timer pour les exercices chronométrés — déclenché par l'utilisateur
   if (isTimed) {
     const timerEl = mainEl.querySelector('#timer-value')
-    const btnPause = mainEl.querySelector('#btn-pause')
-    const btnValider = mainEl.querySelector('#btn-valider')
+    const controlsEl = mainEl.querySelector('#timer-controls')
+    const btnDemarrer = mainEl.querySelector('#btn-demarrer')
 
-    session.timer = createTimer({
-      duration: exercice.dureeSecRep,
-      onTick: (t) => { timerEl.textContent = formatTime(t) },
-      onComplete: () => _afterExercice(session, seance, exercice, niveau, state, params),
-    })
-    session.timer.start()
+    btnDemarrer.addEventListener('click', () => {
+      // Remplace le bouton "Démarrer" par Pause + Terminé
+      controlsEl.innerHTML = `
+        <button type="button" class="btn btn--ghost btn--sm" id="btn-pause">Pause</button>
+        <button type="button" class="btn btn--primary" id="btn-valider">Terminé</button>
+      `
 
-    btnPause.addEventListener('click', () => {
-      if (session.timer.running) {
-        session.timer.pause()
-        btnPause.textContent = 'Reprendre'
-      } else {
-        session.timer.resume()
-        btnPause.textContent = 'Pause'
-      }
-    })
+      session.timer = createTimer({
+        duration: exercice.dureeSecRep,
+        onTick: (t) => { timerEl.textContent = formatTime(t) },
+        onComplete: () => _afterExercice(session, seance, exercice, niveau, state, params),
+      })
+      session.timer.start()
 
-    btnValider.addEventListener('click', () => {
-      session.timer.destroy()
-      _afterExercice(session, seance, exercice, niveau, state, params)
+      controlsEl.querySelector('#btn-pause').addEventListener('click', () => {
+        const btn = controlsEl.querySelector('#btn-pause')
+        if (session.timer.running) {
+          session.timer.pause()
+          btn.textContent = 'Reprendre'
+        } else {
+          session.timer.resume()
+          btn.textContent = 'Pause'
+        }
+      })
+
+      controlsEl.querySelector('#btn-valider').addEventListener('click', () => {
+        session.timer.destroy()
+        _afterExercice(session, seance, exercice, niveau, state, params)
+      })
     })
   } else {
     mainEl.querySelector('#btn-valider').addEventListener('click', () => {
