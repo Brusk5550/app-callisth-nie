@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "nom": "Débutant",
+    "dureeSéance": "20-25 min",
+    "nbSeances": 5,
+    "debloque": true
+  },
+  {
+    "id": 2,
+    "nom": "Intermédiaire",
+    "dureeSéance": "30-35 min",
+    "nbSeances": 5,
+    "debloque": false
+  },
+  {
+    "id": 3,
+    "nom": "Avancé",
+    "dureeSéance": "40-50 min",
+    "nbSeances": 5,
+    "debloque": false
+  },
+  {
+    "id": 4,
+    "nom": "Élite",
+    "dureeSéance": "50-60 min",
+    "nbSeances": 5,
+    "debloque": false
+  }
+]
