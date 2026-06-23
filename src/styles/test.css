@@ -1,0 +1,343 @@
+/* ============================================================
+   PAGE TEST DE VALIDATION
+   ============================================================ */
+.test-page {
+  min-height: calc(100vh - 61px);
+}
+
+.test-layout {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-6) var(--space-12);
+}
+
+/* ── En-tête ─────────────────────────────────────────────── */
+.test-header {
+  margin-bottom: var(--space-8);
+}
+
+.test-header .btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+  padding: var(--space-2) 0;
+  transition: color var(--transition-fast);
+}
+.test-header .btn-back:hover { color: var(--color-text); }
+.test-header .btn-back:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.test-header__niveau {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+.test-header__nom {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+/* ── Phase critères ──────────────────────────────────────── */
+.phase-criteres {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.test-intro__text {
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.test-intro__note {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* Liste critères */
+.criteres-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.critere-item {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  transition: border-color var(--transition-fast);
+}
+
+.critere-label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+/* Masquer le checkbox natif */
+.critere-check {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Checkbox custom */
+.critere-check-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.icon-check-sm {
+  width: 13px;
+  height: 13px;
+  color: #fff;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+/* État coché */
+.critere-check:checked ~ .critere-check-box {
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.critere-check:checked ~ .critere-check-box .icon-check-sm {
+  opacity: 1;
+}
+
+.critere-check:focus-visible ~ .critere-check-box {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Item coché */
+.critere-item:has(.critere-check:checked) {
+  border-color: var(--color-success);
+  background-color: rgba(45, 158, 107, 0.04);
+}
+
+.critere-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  line-height: var(--line-height-normal);
+}
+
+.criteres-actions {
+  display: flex;
+  justify-content: center;
+}
+
+/* ── Phase déclaration ───────────────────────────────────── */
+.phase-declaration {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.declaration-question {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.declaration-sub {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-top: calc(var(--space-6) * -0.5);
+}
+
+.criteres-list--recap {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  gap: var(--space-2);
+}
+
+.critere-item--recap {
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+
+.critere-dot {
+  color: var(--color-warning);
+  font-weight: var(--font-weight-bold);
+  flex-shrink: 0;
+}
+
+.declaration-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+/* Bouton succès */
+.btn--success {
+  background-color: var(--color-success);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.btn--success:hover {
+  background-color: #26885c;
+}
+
+.btn--success:focus-visible {
+  outline: 2px solid var(--color-success);
+  outline-offset: 3px;
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* ── Phase succès ────────────────────────────────────────── */
+.phase-succes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+  padding-top: var(--space-8);
+}
+
+.succes-icon {
+  width: 80px;
+  height: 80px;
+  color: var(--color-success);
+  margin-bottom: var(--space-4);
+}
+.succes-icon svg { width: 100%; height: 100%; }
+
+.succes-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.succes-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+}
+
+.succes-unlock {
+  margin-top: var(--space-4);
+  padding: var(--space-4) var(--space-6);
+  background: linear-gradient(135deg, rgba(230,57,70,0.1), rgba(230,57,70,0.05));
+  border: 1px solid rgba(230,57,70,0.25);
+  border-radius: var(--radius-lg);
+}
+
+.succes-unlock__label {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  margin-bottom: var(--space-1);
+}
+
+.succes-unlock__niveau {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.succes-final__text {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+}
+
+.succes-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  width: 100%;
+  max-width: 300px;
+}
+
+/* ── Phase échec ─────────────────────────────────────────── */
+.phase-echec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+  padding-top: var(--space-8);
+}
+
+.echec-icon {
+  width: 80px;
+  height: 80px;
+  color: var(--color-warning);
+  margin-bottom: var(--space-4);
+}
+.echec-icon svg { width: 100%; height: 100%; }
+
+.echec-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.echec-subtitle {
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+  max-width: 380px;
+}
+
+.echec-note {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.echec-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  width: 100%;
+  max-width: 280px;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .test-layout {
+    padding: var(--space-4) var(--space-4) var(--space-8);
+  }
+
+  .declaration-question {
+    font-size: var(--font-size-xl);
+  }
+}
