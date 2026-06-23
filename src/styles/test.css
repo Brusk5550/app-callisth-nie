@@ -16,23 +16,7 @@
   margin-bottom: var(--space-8);
 }
 
-.test-header .btn-back {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-6);
-  padding: var(--space-2) 0;
-  transition: color var(--transition-fast);
-}
-.test-header .btn-back:hover { color: var(--color-text); }
-.test-header .btn-back:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
-}
+/* .btn-back hérite du style partagé dans main.css */
 
 .test-header__niveau {
   font-size: var(--font-size-xs);
@@ -335,6 +319,82 @@
   margin-top: var(--space-6);
   width: 100%;
   max-width: 280px;
+}
+
+/* ── Écran félicitations (dernier test) ─────────────────── */
+.phase-felicitations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  text-align: center;
+  padding-top: var(--space-6);
+}
+
+.felicitations-badge {
+  width: 88px;
+  height: 88px;
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.felicitations-badge__icon {
+  width: 100%;
+  height: 100%;
+}
+
+.felicitations-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.felicitations-label {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+}
+
+.felicitations-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  line-height: var(--line-height-tight);
+}
+
+.felicitations-message {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 480px;
+  text-align: left;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.felicitations-message p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+}
+
+.felicitations-message p:first-child {
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+}
+
+.felicitations-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 300px;
+  margin-top: var(--space-2);
 }
 
 /* ── Responsive ──────────────────────────────────────────── */

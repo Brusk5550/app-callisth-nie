@@ -10,7 +10,7 @@
  * @param {object} params - { niveauId, seanceId }
  */
 
-import { navigate, logout } from '../main.js'
+import { navigate, goBack, logout } from '../main.js'
 import { createNav } from '../components/nav.js'
 import seancesData from '../data/seances.json'
 import niveaux from '../data/niveaux.json'
@@ -42,11 +42,10 @@ export function render(container, params, state) {
   main.innerHTML = `
     <div class="test-layout">
       <header class="test-header">
-        <button type="button" class="btn-back" id="btn-quitter">
+        <button type="button" class="btn-back" id="btn-quitter" aria-label="Retour">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="back-icon" aria-hidden="true">
             <polyline points="15 18 9 12 15 6"/>
           </svg>
-          Quitter
         </button>
         <p class="test-header__niveau">Niveau ${niveau.id} — ${niveau.nom}</p>
         <h1 class="test-header__nom">${test.nom}</h1>
@@ -58,7 +57,7 @@ export function render(container, params, state) {
   container.appendChild(main)
 
   main.querySelector('#btn-quitter').addEventListener('click', () => {
-    navigate('niveau', { niveauId: params.niveauId })
+    goBack()
   })
 
   _renderPhase(session, test, niveau, state, params, main)
@@ -181,6 +180,13 @@ function _renderDeclaration(mainEl, session, test, niveau, state, params, main) 
 
 function _renderSucces(mainEl, niveau, state, params) {
   const niveauSuivant = niveaux.find(n => n.id === niveau.id + 1)
+  // Dernier test = le niveau débloqué n'a pas de suivant
+  const isLastTest = niveauSuivant && !niveaux.find(n => n.id === niveauSuivant.id + 1)
+
+  if (isLastTest) {
+    _renderFelicitations(mainEl, niveauSuivant)
+    return
+  }
 
   mainEl.innerHTML = `
     <div class="phase-succes">
@@ -194,23 +200,15 @@ function _renderSucces(mainEl, niveau, state, params) {
       <h2 class="succes-title">Niveau ${niveau.id} validé !</h2>
       <p class="succes-subtitle">${niveau.nom}</p>
 
-      ${niveauSuivant ? `
-        <div class="succes-unlock">
-          <p class="succes-unlock__label">Débloqué</p>
-          <p class="succes-unlock__niveau">Niveau ${niveauSuivant.id} — ${niveauSuivant.nom}</p>
-        </div>
-      ` : `
-        <div class="succes-final">
-          <p class="succes-final__text">Tu as atteint le niveau Élite. Félicitations !</p>
-        </div>
-      `}
+      <div class="succes-unlock">
+        <p class="succes-unlock__label">Débloqué</p>
+        <p class="succes-unlock__niveau">Niveau ${niveauSuivant.id} — ${niveauSuivant.nom}</p>
+      </div>
 
       <div class="succes-actions">
-        ${niveauSuivant ? `
-          <button type="button" class="btn btn--primary btn--lg" id="btn-niveau-suivant">
-            Découvrir le niveau ${niveauSuivant.id}
-          </button>
-        ` : ''}
+        <button type="button" class="btn btn--primary btn--lg" id="btn-niveau-suivant">
+          Découvrir le niveau ${niveauSuivant.id}
+        </button>
         <button type="button" class="btn btn--ghost btn--sm" id="btn-dashboard">
           Tableau de bord
         </button>
@@ -218,13 +216,64 @@ function _renderSucces(mainEl, niveau, state, params) {
     </div>
   `
 
-  if (niveauSuivant) {
-    mainEl.querySelector('#btn-niveau-suivant').addEventListener('click', () => {
-      navigate('niveau', { niveauId: niveauSuivant.id })
-    })
-  }
-
+  mainEl.querySelector('#btn-niveau-suivant').addEventListener('click', () => {
+    navigate('niveau', { niveauId: niveauSuivant.id })
+  })
   mainEl.querySelector('#btn-dashboard').addEventListener('click', () => {
+    navigate('dashboard')
+  })
+}
+
+// ── Écran de félicitations (dernier test validé) ──────────────────────────────
+
+function _renderFelicitations(mainEl, niveauElite) {
+  mainEl.innerHTML = `
+    <div class="phase-felicitations">
+
+      <div class="felicitations-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="felicitations-badge__icon">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke-width="1.5" fill="currentColor" opacity="0.15"/>
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+      </div>
+
+      <div class="felicitations-header">
+        <p class="felicitations-label">Niveau ${niveauElite.nom} atteint</p>
+        <h2 class="felicitations-title">Tu l'as fait.</h2>
+      </div>
+
+      <div class="felicitations-message">
+        <p>
+          Ce que tu viens d'accomplir demande du travail, de la patience et une vraie volonté.
+          Tu es grand maintenant — et ça, personne ne peut te l'enlever.
+        </p>
+        <p>
+          Mais sache-le : ce n'est que le commencement. La callisthénie est un chemin qui n'a pas
+          de fin, juste des horizons qui s'élargissent. Chaque mouvement que tu maîtrises en ouvre
+          un autre, plus beau, plus exigeant.
+        </p>
+        <p>
+          Avec le niveau que tu as acquis, tu as tout ce qu'il faut pour continuer à progresser
+          seul, à ton rythme, aussi loin que tu le veux. Tout ira bien pour toi.
+        </p>
+      </div>
+
+      <div class="felicitations-actions">
+        <button type="button" class="btn btn--primary btn--lg" id="btn-felicitations-elite">
+          Découvrir le niveau Élite
+        </button>
+        <button type="button" class="btn btn--ghost btn--sm" id="btn-felicitations-dashboard">
+          Tableau de bord
+        </button>
+      </div>
+
+    </div>
+  `
+
+  mainEl.querySelector('#btn-felicitations-elite').addEventListener('click', () => {
+    navigate('niveau', { niveauId: niveauElite.id })
+  })
+  mainEl.querySelector('#btn-felicitations-dashboard').addEventListener('click', () => {
     navigate('dashboard')
   })
 }

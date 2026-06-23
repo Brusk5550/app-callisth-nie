@@ -11,6 +11,8 @@ import './styles/main.css'
 const state = {
   isLoggedIn: false,
   currentPage: 'login',
+  currentParams: {},
+  navHistory: [],      // pile : [{ page, params }, ...]
   progression: {
     niveaux: [
       { id: 1, debloque: true,  seancesCompletees: 0 },
@@ -41,7 +43,10 @@ const pages = {
  * @param {string} pageName - clé dans l'objet pages
  * @param {object} [params] - paramètres optionnels passés à la page
  */
-export async function navigate(pageName, params = {}) {
+// Pages qui ne doivent pas être empilées dans l'historique
+const NO_HISTORY = ['login', 'register']
+
+export async function navigate(pageName, params = {}, _pushHistory = true) {
   const loader = pages[pageName]
   if (!loader) {
     console.warn(`[router] Page inconnue : "${pageName}"`)
@@ -54,7 +59,13 @@ export async function navigate(pageName, params = {}) {
     return
   }
 
+  // Empile la page courante avant de changer
+  if (_pushHistory && !NO_HISTORY.includes(state.currentPage)) {
+    state.navHistory.push({ page: state.currentPage, params: state.currentParams })
+  }
+
   state.currentPage = pageName
+  state.currentParams = params
   const { render } = await loader()
   const appEl = document.getElementById('app')
 
@@ -65,11 +76,25 @@ export async function navigate(pageName, params = {}) {
   await new Promise(r => setTimeout(r, 120))
 
   appEl.innerHTML = ''
+  window.scrollTo({ top: 0, behavior: 'instant' })
   render(appEl, params, state)
 
   // Fade in
   appEl.classList.remove('page-exit')
   appEl.classList.add('page-enter')
+}
+
+/**
+ * Revient à la page précédente dans l'historique.
+ * Si la pile est vide, revient au dashboard.
+ */
+export function goBack() {
+  const prev = state.navHistory.pop()
+  if (prev) {
+    navigate(prev.page, prev.params, false)
+  } else {
+    navigate('dashboard', {}, false)
+  }
 }
 
 /**
@@ -85,7 +110,8 @@ export function login() {
  */
 export function logout() {
   state.isLoggedIn = false
-  navigate('login')
+  state.navHistory = []
+  navigate('login', {}, false)
 }
 
 // ── Démarrage ────────────────────────────────────────────────────────────────

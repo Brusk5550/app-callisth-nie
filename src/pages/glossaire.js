@@ -5,7 +5,7 @@
  * Filtre par catégorie + recherche textuelle.
  */
 
-import { navigate, logout } from '../main.js'
+import { navigate, goBack, logout } from '../main.js'
 import { createNav } from '../components/nav.js'
 import exercices from '../data/glossaire.json'
 import '../styles/glossaire.css'
@@ -34,11 +34,10 @@ export function render(container, params, state) {
     <div class="glossaire-layout">
 
       <header class="glossaire-header">
-        <button type="button" class="btn-back" id="btn-retour">
+        <button type="button" class="btn-back" id="btn-retour" aria-label="Retour">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="back-icon" aria-hidden="true">
             <polyline points="15 18 9 12 15 6"/>
           </svg>
-          Tableau de bord
         </button>
         <h1 class="glossaire-title">Glossaire</h1>
         <p class="glossaire-subtitle">${exercices.length} exercices — descriptions et muscles ciblés.</p>
@@ -81,7 +80,7 @@ export function render(container, params, state) {
 
   container.appendChild(main)
 
-  main.querySelector('#btn-retour').addEventListener('click', () => navigate('dashboard'))
+  main.querySelector('#btn-retour').addEventListener('click', () => goBack())
 
   // État des filtres
   let categorieActive = 'tous'

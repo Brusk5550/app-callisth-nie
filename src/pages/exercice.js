@@ -4,7 +4,7 @@
  * @param {object} params - { exerciceId: string }
  */
 
-import { navigate, logout } from '../main.js'
+import { navigate, goBack, logout } from '../main.js'
 import { createNav } from '../components/nav.js'
 import exercices from '../data/glossaire.json'
 import '../styles/exercice.css'
@@ -46,11 +46,10 @@ export function render(container, params, state) {
   main.innerHTML = `
     <div class="exercice-layout">
 
-      <button type="button" class="btn-back" id="btn-retour">
+      <button type="button" class="btn-back" id="btn-retour" aria-label="Retour">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="back-icon" aria-hidden="true">
           <polyline points="15 18 9 12 15 6"/>
         </svg>
-        Glossaire
       </button>
 
       <div class="exercice-hero">
@@ -98,7 +97,7 @@ export function render(container, params, state) {
 
   container.appendChild(main)
 
-  main.querySelector('#btn-retour').addEventListener('click', () => navigate('glossaire'))
+  main.querySelector('#btn-retour').addEventListener('click', () => goBack())
 
   // Exercices liés
   if (lies.length > 0) {

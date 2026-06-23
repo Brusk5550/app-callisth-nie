@@ -10,7 +10,7 @@
  * @param {object} params - { niveauId, seanceId }
  */
 
-import { navigate, logout } from '../main.js'
+import { navigate, goBack, logout } from '../main.js'
 import { createNav } from '../components/nav.js'
 import { createTimer, formatTime } from '../components/timer.js'
 import seancesData from '../data/seances.json'
@@ -54,11 +54,10 @@ export function render(container, params, state) {
 
       <!-- En-tête fixe -->
       <header class="seance-header">
-        <button type="button" class="btn-back" id="btn-quitter" aria-label="Quitter la séance">
+        <button type="button" class="btn-back" id="btn-quitter" aria-label="Retour">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="back-icon" aria-hidden="true">
             <polyline points="15 18 9 12 15 6"/>
           </svg>
-          Quitter
         </button>
         <div class="seance-header__info">
           <p class="seance-header__niveau">Niveau ${niveau.id} — ${niveau.nom}</p>
@@ -84,7 +83,7 @@ export function render(container, params, state) {
   // Bouton quitter
   main.querySelector('#btn-quitter').addEventListener('click', () => {
     session.timer?.destroy()
-    navigate('niveau', { niveauId: params.niveauId })
+    goBack()
   })
 
   // ── Premier rendu ─────────────────────────────────────────────────────────

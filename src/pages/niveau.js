@@ -7,7 +7,7 @@
  * @param {object} params - { niveauId: number }
  */
 
-import { navigate, logout } from '../main.js'
+import { navigate, goBack, logout } from '../main.js'
 import { createNav } from '../components/nav.js'
 import niveaux from '../data/niveaux.json'
 import seances from '../data/seances.json'
@@ -44,14 +44,13 @@ export function render(container, params, state) {
   const back = document.createElement('button')
   back.type = 'button'
   back.className = 'btn-back'
-  back.setAttribute('aria-label', 'Retour au tableau de bord')
+  back.setAttribute('aria-label', 'Retour')
   back.innerHTML = `
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="back-icon" aria-hidden="true">
       <polyline points="15 18 9 12 15 6"/>
     </svg>
-    Tableau de bord
   `
-  back.addEventListener('click', () => navigate('dashboard'))
+  back.addEventListener('click', () => goBack())
   main.appendChild(back)
 
   // En-tête du niveau

@@ -22,24 +22,7 @@
   margin-bottom: var(--space-8);
 }
 
-.seance-header .btn-back {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-6);
-  padding: var(--space-2) 0;
-  transition: color var(--transition-fast);
-}
-
-.seance-header .btn-back:hover { color: var(--color-text); }
-.seance-header .btn-back:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
-}
+/* .btn-back hérite du style partagé dans main.css */
 
 .seance-header__niveau {
   font-size: var(--font-size-xs);
