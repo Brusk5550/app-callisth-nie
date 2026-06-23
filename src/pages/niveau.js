@@ -129,6 +129,43 @@ export function render(container, params, state) {
     main.appendChild(testSection)
   }
 
+  // Historique des tests pour ce niveau
+  const historique = state.testHistory.filter(t => t.niveauId === niveauId)
+  if (historique.length > 0) {
+    const histSection = document.createElement('section')
+    histSection.className = 'niveau-historique'
+    histSection.setAttribute('aria-label', 'Historique des tentatives')
+
+    histSection.innerHTML = `<h2 class="section-title">Historique des tentatives</h2>`
+
+    const liste = document.createElement('ul')
+    liste.className = 'historique-list'
+
+    // Du plus récent au plus ancien
+    ;[...historique].reverse().forEach(t => {
+      const date = new Date(t.date)
+      const dateStr = date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
+      const heureStr = date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })
+
+      const li = document.createElement('li')
+      li.className = `historique-item historique-item--${t.reussi ? 'succes' : 'echec'}`
+      li.innerHTML = `
+        <span class="historique-item__icon" aria-hidden="true">
+          ${t.reussi
+            ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>`
+            : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`
+          }
+        </span>
+        <span class="historique-item__label">${t.reussi ? 'Réussi' : 'Échoué'}</span>
+        <span class="historique-item__date">${dateStr} à ${heureStr}</span>
+      `
+      liste.appendChild(li)
+    })
+
+    histSection.appendChild(liste)
+    main.appendChild(histSection)
+  }
+
   container.appendChild(main)
 }
 

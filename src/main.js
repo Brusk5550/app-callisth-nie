@@ -18,7 +18,9 @@ const state = {
       { id: 3, debloque: false, seancesCompletees: 0 },
       { id: 4, debloque: false, seancesCompletees: 0 },
     ]
-  }
+  },
+  testHistory: []
+  // Entrées : { niveauId, niveauNom, reussi, date (ISO string) }
 }
 
 // ── Import des pages (lazy via dynamic import) ───────────────────────────────

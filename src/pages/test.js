@@ -152,12 +152,14 @@ function _renderDeclaration(mainEl, session, test, niveau, state, params, main) 
   `
 
   mainEl.querySelector('#btn-reussi').addEventListener('click', () => {
+    _enregistrerTentative(niveau, true, state)
     _debloquerNiveauSuivant(niveau, state)
     session.phase = PHASE.SUCCES
     _renderPhase(session, test, niveau, state, params, main)
   })
 
   mainEl.querySelector('#btn-echec').addEventListener('click', () => {
+    _enregistrerTentative(niveau, false, state)
     session.phase = PHASE.ECHEC
     _renderPhase(session, test, niveau, state, params, main)
   })
@@ -258,4 +260,15 @@ function _renderEchec(mainEl, session, test, niveau, state, params, main) {
 function _debloquerNiveauSuivant(niveau, state) {
   const suivant = state.progression.niveaux.find(n => n.id === niveau.id + 1)
   if (suivant) suivant.debloque = true
+}
+
+// ── Enregistrement historique ─────────────────────────────────────────────────
+
+function _enregistrerTentative(niveau, reussi, state) {
+  state.testHistory.push({
+    niveauId:   niveau.id,
+    niveauNom:  niveau.nom,
+    reussi,
+    date: new Date().toISOString(),
+  })
 }
