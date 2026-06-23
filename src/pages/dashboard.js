@@ -52,7 +52,7 @@ export function render(container, params, state) {
       </div>
     `
     banner.querySelector('#btn-seance-du-jour').addEventListener('click', () => {
-      navigate('seance', { niveauId: niveauData.id, seanceNum: prochaine })
+      navigate('seance', { niveauId: niveauData.id, seanceId: `s${niveauData.id}-${prochaine}` })
     })
     main.appendChild(banner)
   }
