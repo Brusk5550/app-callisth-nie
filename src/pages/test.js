@@ -107,14 +107,26 @@ function _renderCriteres(mainEl, session, test, niveau, state, params, main) {
       </ul>
 
       <div class="criteres-actions">
-        <button type="button" class="btn btn--primary btn--lg" id="btn-je-suis-pret">
-          Je suis prêt — déclarer le résultat
+        <button type="button" class="btn btn--primary btn--lg" id="btn-je-suis-pret" disabled aria-disabled="true">
+          Déclarer mon résultat
         </button>
       </div>
     </div>
   `
 
-  mainEl.querySelector('#btn-je-suis-pret').addEventListener('click', () => {
+  const btn = mainEl.querySelector('#btn-je-suis-pret')
+  const checkboxes = mainEl.querySelectorAll('.critere-check')
+
+  // Active le bouton uniquement quand toutes les cases sont cochées
+  function _updateBtn() {
+    const toutCoche = [...checkboxes].every(c => c.checked)
+    btn.disabled = !toutCoche
+    btn.setAttribute('aria-disabled', String(!toutCoche))
+  }
+
+  checkboxes.forEach(cb => cb.addEventListener('change', _updateBtn))
+
+  btn.addEventListener('click', () => {
     session.phase = PHASE.DECLARATION
     _renderPhase(session, test, niveau, state, params, main)
   })

@@ -15,6 +15,7 @@ import { createNav } from '../components/nav.js'
 import { createTimer, formatTime } from '../components/timer.js'
 import seancesData from '../data/seances.json'
 import niveaux from '../data/niveaux.json'
+import glossaire from '../data/glossaire.json'
 import '../styles/seance.css'
 
 // ── Phase de la séance ────────────────────────────────────────────────────────
@@ -130,6 +131,10 @@ function _renderPhase(session, seance, niveau, state, params) {
 function _renderExercice(mainEl, session, seance, exercice, niveau, state, params) {
   const isTimed = 'dureeSecRep' in exercice
 
+  // Recherche de l'entrée du glossaire correspondant à l'exercice
+  const nomNorm = (s) => s.toLowerCase().trim()
+  const glossaireEntry = glossaire.find(g => nomNorm(g.nom) === nomNorm(exercice.nom))
+
   mainEl.innerHTML = `
     <div class="phase-exercice">
 
@@ -144,6 +149,16 @@ function _renderExercice(mainEl, session, seance, exercice, niveau, state, param
 
       <h2 class="exercice-nom">${exercice.nom}</h2>
       <p class="exercice-desc">${exercice.description}</p>
+
+      ${glossaireEntry ? `
+        <button type="button" class="btn-glossaire-link" id="btn-glossaire-link" aria-label="Voir ${exercice.nom} dans le glossaire">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-glossaire-link__icon" aria-hidden="true">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+          Voir dans le glossaire
+        </button>
+      ` : ''}
 
       <!-- Timer ou reps -->
       ${isTimed ? `
@@ -167,6 +182,15 @@ function _renderExercice(mainEl, session, seance, exercice, niveau, state, param
 
     </div>
   `
+
+  // Lien vers le glossaire
+  const btnGlossaireLink = mainEl.querySelector('#btn-glossaire-link')
+  if (btnGlossaireLink && glossaireEntry) {
+    btnGlossaireLink.addEventListener('click', () => {
+      session.timer?.destroy()
+      navigate('exercice', { exerciceId: glossaireEntry.id })
+    })
+  }
 
   // Timer automatique pour les exercices chronométrés
   if (isTimed) {

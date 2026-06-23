@@ -106,12 +106,10 @@ function _bindEvents() {
     input.addEventListener('focus', () => _clearError(input.closest('.form-field')))
   })
 
-  // Submit
+  // Submit — auth cosmétique, pas de validation requise
   form.addEventListener('submit', (e) => {
     e.preventDefault()
-    if (_validate(form)) {
-      login() // Auth cosmétique → redirige vers dashboard
-    }
+    login()
   })
 }
 
