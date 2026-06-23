@@ -1,1 +1,822 @@
-[]
+[
+  {
+    "id": "s1-1",
+    "niveauId": 1,
+    "numero": 1,
+    "type": "seance",
+    "nom": "Fondamentaux — Poussée",
+    "duree": "20-25 min",
+    "exercices": [
+      {
+        "nom": "Pompes genoux",
+        "series": 3,
+        "reps": 10,
+        "reposSec": 60,
+        "description": "Corps droit des genoux aux épaules, coudes à 45° du buste"
+      },
+      {
+        "nom": "Dips sur chaise",
+        "series": 3,
+        "reps": 8,
+        "reposSec": 60,
+        "description": "Mains sur le bord d'une chaise, dos près du siège, descendre jusqu'à 90°"
+      },
+      {
+        "nom": "Gainage frontal",
+        "series": 3,
+        "dureeSecRep": 20,
+        "reposSec": 45,
+        "description": "Appui sur les avant-bras, corps aligné, abdos contractés"
+      },
+      {
+        "nom": "Pompes pike",
+        "series": 2,
+        "reps": 8,
+        "reposSec": 60,
+        "description": "Hanches hautes en V inversé, descendre la tête vers le sol — initiation aux épaules"
+      }
+    ]
+  },
+  {
+    "id": "s1-2",
+    "niveauId": 1,
+    "numero": 2,
+    "type": "seance",
+    "nom": "Fondamentaux — Traction",
+    "duree": "20-25 min",
+    "exercices": [
+      {
+        "nom": "Rowing sur table",
+        "series": 3,
+        "reps": 10,
+        "reposSec": 60,
+        "description": "Allongé sous une table solide, saisir le bord et tirer la poitrine vers le haut"
+      },
+      {
+        "nom": "Tractions assistées bande",
+        "series": 3,
+        "reps": 6,
+        "reposSec": 90,
+        "description": "Bande élastique autour des genoux, tirer jusqu'au menton au-dessus de la barre"
+      },
+      {
+        "nom": "Superman",
+        "series": 3,
+        "reps": 12,
+        "reposSec": 45,
+        "description": "Allongé ventre au sol, lever simultanément bras et jambes, tenir 2 secondes"
+      },
+      {
+        "nom": "Deadhang",
+        "series": 3,
+        "dureeSecRep": 20,
+        "reposSec": 60,
+        "description": "Suspendre à la barre en prise pronation, épaules engagées, corps détendu"
+      }
+    ]
+  },
+  {
+    "id": "s1-3",
+    "niveauId": 1,
+    "numero": 3,
+    "type": "seance",
+    "nom": "Fondamentaux — Gainage & Jambes",
+    "duree": "20-25 min",
+    "exercices": [
+      {
+        "nom": "Squat",
+        "series": 3,
+        "reps": 15,
+        "reposSec": 60,
+        "description": "Pieds largeur d'épaules, descendre les cuisses parallèles au sol, genoux dans l'axe des pieds"
+      },
+      {
+        "nom": "Fentes alternées",
+        "series": 3,
+        "reps": 10,
+        "reposSec": 60,
+        "description": "Grand pas en avant, genou arrière proche du sol, revenir en position initiale"
+      },
+      {
+        "nom": "Gainage latéral",
+        "series": 3,
+        "dureeSecRep": 20,
+        "reposSec": 45,
+        "description": "Appui sur un avant-bras, corps aligné de la tête aux pieds, hanche levée"
+      },
+      {
+        "nom": "Gainage frontal",
+        "series": 3,
+        "dureeSecRep": 25,
+        "reposSec": 45,
+        "description": "Appui sur les avant-bras, corps aligné, abdos contractés"
+      }
+    ]
+  },
+  {
+    "id": "s1-4",
+    "niveauId": 1,
+    "numero": 4,
+    "type": "seance",
+    "nom": "Circuit complet",
+    "duree": "20-25 min",
+    "exercices": [
+      {
+        "nom": "Pompes genoux",
+        "series": 3,
+        "reps": 12,
+        "reposSec": 60,
+        "description": "Corps droit des genoux aux épaules, coudes à 45° du buste"
+      },
+      {
+        "nom": "Tractions assistées bande",
+        "series": 3,
+        "reps": 6,
+        "reposSec": 90,
+        "description": "Bande élastique autour des genoux, tirer jusqu'au menton au-dessus de la barre"
+      },
+      {
+        "nom": "Squat",
+        "series": 3,
+        "reps": 15,
+        "reposSec": 60,
+        "description": "Pieds largeur d'épaules, descendre les cuisses parallèles au sol"
+      },
+      {
+        "nom": "Gainage frontal",
+        "series": 3,
+        "dureeSecRep": 25,
+        "reposSec": 45,
+        "description": "Appui sur les avant-bras, corps aligné, abdos contractés"
+      },
+      {
+        "nom": "Dips sur chaise",
+        "series": 3,
+        "reps": 10,
+        "reposSec": 60,
+        "description": "Mains sur le bord d'une chaise, dos près du siège, descendre jusqu'à 90°"
+      }
+    ]
+  },
+  {
+    "id": "s1-5",
+    "niveauId": 1,
+    "numero": 5,
+    "type": "seance",
+    "nom": "Progression — Avant le test",
+    "duree": "20-25 min",
+    "exercices": [
+      {
+        "nom": "Pompes strictes",
+        "series": 3,
+        "reps": 8,
+        "reposSec": 60,
+        "description": "Corps droit des pieds aux épaules, coudes à 45°, amplitude complète"
+      },
+      {
+        "nom": "Tractions assistées bande",
+        "series": 4,
+        "reps": 8,
+        "reposSec": 90,
+        "description": "Bande élastique autour des genoux, tirer jusqu'au menton au-dessus de la barre"
+      },
+      {
+        "nom": "Dips sur chaise",
+        "series": 3,
+        "reps": 12,
+        "reposSec": 60,
+        "description": "Mains sur le bord d'une chaise, dos près du siège, descendre jusqu'à 90°"
+      },
+      {
+        "nom": "Gainage frontal",
+        "series": 3,
+        "dureeSecRep": 30,
+        "reposSec": 45,
+        "description": "Appui sur les avant-bras, corps aligné, abdos contractés"
+      }
+    ]
+  },
+  {
+    "id": "t1",
+    "niveauId": 1,
+    "numero": 6,
+    "type": "test",
+    "nom": "Test de validation — Niveau 1",
+    "duree": "15 min",
+    "criteres": [
+      "3 tractions strictes (sans élan, amplitude complète)",
+      "Gainage planche 30 secondes (corps aligné, sans trembler)",
+      "15 pompes strictes (amplitude complète, sans pause)"
+    ]
+  },
+  {
+    "id": "s2-1",
+    "niveauId": 2,
+    "numero": 1,
+    "type": "seance",
+    "nom": "Poussée intermédiaire",
+    "duree": "30-35 min",
+    "exercices": [
+      {
+        "nom": "Pompes strictes",
+        "series": 4,
+        "reps": 12,
+        "reposSec": 60,
+        "description": "Corps droit des pieds aux épaules, coudes à 45°, amplitude complète"
+      },
+      {
+        "nom": "Dips parallèles",
+        "series": 3,
+        "reps": 8,
+        "reposSec": 90,
+        "description": "Sur barres parallèles, descendre jusqu'à ce que les bras forment 90°, corps légèrement penché en avant"
+      },
+      {
+        "nom": "Pompes diamant",
+        "series": 3,
+        "reps": 8,
+        "reposSec": 60,
+        "description": "Mains formant un losange sous la poitrine, coudes le long du corps"
+      },
+      {
+        "nom": "Pompes pike",
+        "series": 3,
+        "reps": 10,
+        "reposSec": 60,
+        "description": "Hanches hautes en V inversé, descendre la tête vers le sol"
+      }
+    ]
+  },
+  {
+    "id": "s2-2",
+    "niveauId": 2,
+    "numero": 2,
+    "type": "seance",
+    "nom": "Traction intermédiaire",
+    "duree": "30-35 min",
+    "exercices": [
+      {
+        "nom": "Tractions prise large",
+        "series": 4,
+        "reps": 6,
+        "reposSec": 90,
+        "description": "Prise pronation plus large que les épaules, tirer les coudes vers le bas et l'arrière"
+      },
+      {
+        "nom": "Tractions prise serrée",
+        "series": 3,
+        "reps": 6,
+        "reposSec": 90,
+        "description": "Mains rapprochées en prise pronation, accent sur les biceps et le bas du dos"
+      },
+      {
+        "nom": "Rowing table lesté",
+        "series": 3,
+        "reps": 12,
+        "reposSec": 60,
+        "description": "Sac à dos lesté sur le dos, tirer la poitrine vers la table"
+      },
+      {
+        "nom": "Deadhang",
+        "series": 3,
+        "dureeSecRep": 30,
+        "reposSec": 60,
+        "description": "Suspendre à la barre en prise pronation, épaules engagées"
+      }
+    ]
+  },
+  {
+    "id": "s2-3",
+    "niveauId": 2,
+    "numero": 3,
+    "type": "seance",
+    "nom": "Gainage avancé",
+    "duree": "30-35 min",
+    "exercices": [
+      {
+        "nom": "L-sit progression (jambes pliées)",
+        "series": 4,
+        "dureeSecRep": 10,
+        "reposSec": 60,
+        "description": "Appui sur les mains, genoux remontés à hauteur de hanche, fessiers décollés du sol"
+      },
+      {
+        "nom": "Dragon flag négatif",
+        "series": 3,
+        "reps": 5,
+        "reposSec": 90,
+        "description": "Allongé sur un banc, corps rigide, descendre lentement depuis la verticale en 4 secondes"
+      },
+      {
+        "nom": "Gainage frontal",
+        "series": 4,
+        "dureeSecRep": 40,
+        "reposSec": 45,
+        "description": "Appui sur les avant-bras, corps parfaitement aligné"
+      },
+      {
+        "nom": "Hollow body hold",
+        "series": 3,
+        "dureeSecRep": 20,
+        "reposSec": 60,
+        "description": "Allongé sur le dos, bas du dos plaqué au sol, bras et jambes tendus légèrement décollés"
+      }
+    ]
+  },
+  {
+    "id": "s2-4",
+    "niveauId": 2,
+    "numero": 4,
+    "type": "seance",
+    "nom": "Circuit intermédiaire",
+    "duree": "30-35 min",
+    "exercices": [
+      {
+        "nom": "Pompes strictes",
+        "series": 4,
+        "reps": 15,
+        "reposSec": 60,
+        "description": "Corps droit des pieds aux épaules, coudes à 45°, amplitude complète"
+      },
+      {
+        "nom": "Tractions prise large",
+        "series": 4,
+        "reps": 8,
+        "reposSec": 90,
+        "description": "Prise pronation large, tirer les coudes vers le bas et l'arrière"
+      },
+      {
+        "nom": "Dips parallèles",
+        "series": 3,
+        "reps": 10,
+        "reposSec": 90,
+        "description": "Sur barres parallèles, descendre jusqu'à 90°"
+      },
+      {
+        "nom": "L-sit progression (jambes pliées)",
+        "series": 3,
+        "dureeSecRep": 10,
+        "reposSec": 60,
+        "description": "Appui sur les mains, genoux remontés à hauteur de hanche, fessiers décollés"
+      }
+    ]
+  },
+  {
+    "id": "s2-5",
+    "niveauId": 2,
+    "numero": 5,
+    "type": "seance",
+    "nom": "Progression — Avant le test",
+    "duree": "30-35 min",
+    "exercices": [
+      {
+        "nom": "Pompes decline",
+        "series": 3,
+        "reps": 10,
+        "reposSec": 60,
+        "description": "Pieds surélevés sur une chaise, corps incliné, accent sur le haut des pectoraux et les épaules"
+      },
+      {
+        "nom": "Tractions supination",
+        "series": 4,
+        "reps": 8,
+        "reposSec": 90,
+        "description": "Prise paumes vers soi, amplitude complète, menton au-dessus de la barre"
+      },
+      {
+        "nom": "Dips parallèles",
+        "series": 4,
+        "reps": 10,
+        "reposSec": 90,
+        "description": "Sur barres parallèles, descendre jusqu'à 90°"
+      },
+      {
+        "nom": "L-sit progression (jambes pliées)",
+        "series": 4,
+        "dureeSecRep": 10,
+        "reposSec": 60,
+        "description": "Appui sur les mains, genoux remontés, tenir la position"
+      }
+    ]
+  },
+  {
+    "id": "t2",
+    "niveauId": 2,
+    "numero": 6,
+    "type": "test",
+    "nom": "Test de validation — Niveau 2",
+    "duree": "15 min",
+    "criteres": [
+      "8 tractions strictes (prise pronation, amplitude complète, sans élan)",
+      "5 pompes archer assistées par côté (main opposée sur ballon ou bouteille)",
+      "L-sit jambes pliées 10 secondes (fessiers décollés, genoux à hauteur de hanche)"
+    ]
+  },
+  {
+    "id": "s3-1",
+    "niveauId": 3,
+    "numero": 1,
+    "type": "seance",
+    "nom": "Poussée avancée",
+    "duree": "40-50 min",
+    "exercices": [
+      {
+        "nom": "Pompes archer",
+        "series": 4,
+        "reps": 6,
+        "reposSec": 90,
+        "description": "Une main à largeur d'épaule, l'autre tendue sur le côté — alterner chaque série"
+      },
+      {
+        "nom": "Dips lestés",
+        "series": 4,
+        "reps": 8,
+        "reposSec": 90,
+        "description": "Ceinture ou sac lesté, parallèles, descendre jusqu'à 90° avec contrôle"
+      },
+      {
+        "nom": "Pompes decline",
+        "series": 3,
+        "reps": 12,
+        "reposSec": 60,
+        "description": "Pieds surélevés, corps incliné, accent sur le haut des pectoraux"
+      },
+      {
+        "nom": "Pompes pike sur élévation",
+        "series": 3,
+        "reps": 10,
+        "reposSec": 60,
+        "description": "Pieds surélevés, hanches hautes, descendre la tête entre les mains — initiation handstand push-up"
+      }
+    ]
+  },
+  {
+    "id": "s3-2",
+    "niveauId": 3,
+    "numero": 2,
+    "type": "seance",
+    "nom": "Traction avancée",
+    "duree": "40-50 min",
+    "exercices": [
+      {
+        "nom": "Tractions lestées",
+        "series": 4,
+        "reps": 6,
+        "reposSec": 120,
+        "description": "Ceinture lestée, prise pronation, amplitude complète, tempo contrôlé"
+      },
+      {
+        "nom": "Tractions tempo (3-1-3)",
+        "series": 3,
+        "reps": 5,
+        "reposSec": 120,
+        "description": "3 secondes montée, 1 seconde pause en haut, 3 secondes descente"
+      },
+      {
+        "nom": "Rowing anneau",
+        "series": 3,
+        "reps": 12,
+        "reposSec": 60,
+        "description": "Anneaux de gymnastique ou TRX, corps incliné, tirer les anneaux vers les pectoraux"
+      },
+      {
+        "nom": "Deadhang une main assistée",
+        "series": 3,
+        "dureeSecRep": 15,
+        "reposSec": 90,
+        "description": "Une main sur la barre, l'autre saisit le poignet — renforcement unilateral"
+      }
+    ]
+  },
+  {
+    "id": "s3-3",
+    "niveauId": 3,
+    "numero": 3,
+    "type": "seance",
+    "nom": "Muscle-up — Progression",
+    "duree": "40-50 min",
+    "exercices": [
+      {
+        "nom": "Muscle-up bande",
+        "series": 4,
+        "reps": 4,
+        "reposSec": 120,
+        "description": "Bande élastique pour assister le passage au-dessus de la barre, mouvement fluide et explosif"
+      },
+      {
+        "nom": "Tractions explosives",
+        "series": 4,
+        "reps": 5,
+        "reposSec": 120,
+        "description": "Traction maximalement explosive, tenter de faire passer les coudes au-dessus de la barre"
+      },
+      {
+        "nom": "Dips profondes",
+        "series": 3,
+        "reps": 10,
+        "reposSec": 90,
+        "description": "Descendre jusqu'à ce que les épaules soient sous les coudes, amplitude maximale"
+      },
+      {
+        "nom": "Transition muscle-up (négatif)",
+        "series": 3,
+        "reps": 4,
+        "reposSec": 120,
+        "description": "Partir du haut de la barre (phase dip), descendre lentement à travers la transition en 4 secondes"
+      }
+    ]
+  },
+  {
+    "id": "s3-4",
+    "niveauId": 3,
+    "numero": 4,
+    "type": "seance",
+    "nom": "Front Lever — Progression",
+    "duree": "40-50 min",
+    "exercices": [
+      {
+        "nom": "Front lever tuck",
+        "series": 5,
+        "dureeSecRep": 10,
+        "reposSec": 120,
+        "description": "Suspendu à la barre, genoux ramenés à la poitrine, corps horizontal, épaules actives"
+      },
+      {
+        "nom": "Tractions front lever",
+        "series": 4,
+        "reps": 5,
+        "reposSec": 120,
+        "description": "En position front lever tuck, effectuer une traction en maintenant la position horizontale"
+      },
+      {
+        "nom": "L-sit",
+        "series": 4,
+        "dureeSecRep": 15,
+        "reposSec": 60,
+        "description": "Appui sur les mains, jambes tendues horizontales, corps en L"
+      },
+      {
+        "nom": "Tractions prise large",
+        "series": 3,
+        "reps": 8,
+        "reposSec": 90,
+        "description": "Prise pronation large, tirer les coudes vers le bas et l'arrière"
+      }
+    ]
+  },
+  {
+    "id": "s3-5",
+    "niveauId": 3,
+    "numero": 5,
+    "type": "seance",
+    "nom": "Circuit avancé — Avant le test",
+    "duree": "40-50 min",
+    "exercices": [
+      {
+        "nom": "Pompes archer",
+        "series": 3,
+        "reps": 5,
+        "reposSec": 90,
+        "description": "Alterner chaque série — 5 reps par côté"
+      },
+      {
+        "nom": "Tractions lestées",
+        "series": 3,
+        "reps": 5,
+        "reposSec": 120,
+        "description": "Ceinture lestée, prise pronation, amplitude complète"
+      },
+      {
+        "nom": "Muscle-up bande",
+        "series": 3,
+        "reps": 3,
+        "reposSec": 120,
+        "description": "Bande élastique, mouvement fluide et explosif"
+      },
+      {
+        "nom": "Front lever tuck",
+        "series": 3,
+        "dureeSecRep": 10,
+        "reposSec": 120,
+        "description": "Genoux ramenés, corps horizontal, épaules actives"
+      },
+      {
+        "nom": "L-sit",
+        "series": 3,
+        "dureeSecRep": 12,
+        "reposSec": 60,
+        "description": "Jambes tendues horizontales, corps en L"
+      }
+    ]
+  },
+  {
+    "id": "t3",
+    "niveauId": 3,
+    "numero": 6,
+    "type": "test",
+    "nom": "Test de validation — Niveau 3",
+    "duree": "20 min",
+    "criteres": [
+      "12 tractions strictes (prise pronation, amplitude complète, sans élan)",
+      "1 muscle-up strict (sans bande, passage propre au-dessus de la barre)",
+      "Front lever tuck 10 secondes (corps horizontal, genoux ramenés, épaules actives)"
+    ]
+  },
+  {
+    "id": "s4-1",
+    "niveauId": 4,
+    "numero": 1,
+    "type": "seance",
+    "nom": "Planche — Progression",
+    "duree": "50-60 min",
+    "exercices": [
+      {
+        "nom": "Planche tuck",
+        "series": 5,
+        "dureeSecRep": 10,
+        "reposSec": 180,
+        "description": "Appui sur les mains, genoux ramenés, corps légèrement incliné vers l'avant, épaules en protraction"
+      },
+      {
+        "nom": "Pompes piques",
+        "series": 4,
+        "reps": 8,
+        "reposSec": 120,
+        "description": "En équilibre sur les mains (contre un mur), descendre et pousser — handstand push-up"
+      },
+      {
+        "nom": "Dips lestés",
+        "series": 4,
+        "reps": 8,
+        "reposSec": 90,
+        "description": "Ceinture lestée, amplitude complète, contrôle total"
+      },
+      {
+        "nom": "Pseudo planche push-up",
+        "series": 3,
+        "reps": 8,
+        "reposSec": 120,
+        "description": "Pompes avec les mains au niveau des hanches, corps légèrement incliné — prépare les épaules à la planche"
+      }
+    ]
+  },
+  {
+    "id": "s4-2",
+    "niveauId": 4,
+    "numero": 2,
+    "type": "seance",
+    "nom": "Muscle-up — Maîtrise",
+    "duree": "50-60 min",
+    "exercices": [
+      {
+        "nom": "Muscle-up barre",
+        "series": 5,
+        "reps": 3,
+        "reposSec": 180,
+        "description": "Passage strict au-dessus de la barre, transition propre, sans élan excessif"
+      },
+      {
+        "nom": "Muscle-up anneaux",
+        "series": 4,
+        "reps": 2,
+        "reposSec": 180,
+        "description": "Sur anneaux de gymnastique, plus difficile en raison de l'instabilité"
+      },
+      {
+        "nom": "Tractions lestées",
+        "series": 3,
+        "reps": 5,
+        "reposSec": 120,
+        "description": "Ceinture lestée, prise pronation, amplitude complète"
+      },
+      {
+        "nom": "Dips profondes lestées",
+        "series": 3,
+        "reps": 8,
+        "reposSec": 120,
+        "description": "Ceinture lestée, amplitude maximale, contrôle total"
+      }
+    ]
+  },
+  {
+    "id": "s4-3",
+    "niveauId": 4,
+    "numero": 3,
+    "type": "seance",
+    "nom": "Front Lever — Maîtrise",
+    "duree": "50-60 min",
+    "exercices": [
+      {
+        "nom": "Front lever avancé (une jambe tendue)",
+        "series": 5,
+        "dureeSecRep": 8,
+        "reposSec": 180,
+        "description": "Une jambe tendue, l'autre pliée — progression vers le front lever complet"
+      },
+      {
+        "nom": "Tractions front lever",
+        "series": 4,
+        "reps": 4,
+        "reposSec": 180,
+        "description": "En position front lever, effectuer une traction en maintenant l'horizontale"
+      },
+      {
+        "nom": "L-sit vers V-sit",
+        "series": 3,
+        "dureeSecRep": 10,
+        "reposSec": 120,
+        "description": "Partir du L-sit et tenter de pousser les jambes au-dessus de l'horizontale"
+      },
+      {
+        "nom": "Tractions lestées",
+        "series": 3,
+        "reps": 6,
+        "reposSec": 120,
+        "description": "Ceinture lestée, amplitude complète"
+      }
+    ]
+  },
+  {
+    "id": "s4-4",
+    "niveauId": 4,
+    "numero": 4,
+    "type": "seance",
+    "nom": "Back Lever & Skills",
+    "duree": "50-60 min",
+    "exercices": [
+      {
+        "nom": "Back lever tuck",
+        "series": 4,
+        "dureeSecRep": 8,
+        "reposSec": 180,
+        "description": "Suspendu à la barre, rotation arrière, corps horizontal face au sol, genoux ramenés"
+      },
+      {
+        "nom": "Planche tuck",
+        "series": 4,
+        "dureeSecRep": 12,
+        "reposSec": 180,
+        "description": "Appui sur les mains, genoux ramenés, épaules en forte protraction"
+      },
+      {
+        "nom": "Muscle-up barre",
+        "series": 3,
+        "reps": 4,
+        "reposSec": 180,
+        "description": "Passage strict, transition propre"
+      },
+      {
+        "nom": "Hollow body hold",
+        "series": 3,
+        "dureeSecRep": 30,
+        "reposSec": 60,
+        "description": "Allongé, bas du dos plaqué, bras et jambes tendus décollés — gainage fondamental"
+      }
+    ]
+  },
+  {
+    "id": "s4-5",
+    "niveauId": 4,
+    "numero": 5,
+    "type": "seance",
+    "nom": "Circuit Élite",
+    "duree": "50-60 min",
+    "exercices": [
+      {
+        "nom": "Muscle-up barre",
+        "series": 4,
+        "reps": 3,
+        "reposSec": 180,
+        "description": "Passage strict au-dessus de la barre, sans élan excessif"
+      },
+      {
+        "nom": "Front lever avancé (une jambe tendue)",
+        "series": 3,
+        "dureeSecRep": 8,
+        "reposSec": 180,
+        "description": "Une jambe tendue, l'autre pliée, corps horizontal"
+      },
+      {
+        "nom": "Planche tuck",
+        "series": 3,
+        "dureeSecRep": 10,
+        "reposSec": 180,
+        "description": "Genoux ramenés, épaules en forte protraction"
+      },
+      {
+        "nom": "Tractions lestées",
+        "series": 3,
+        "reps": 5,
+        "reposSec": 120,
+        "description": "Ceinture lestée, amplitude complète"
+      },
+      {
+        "nom": "L-sit vers V-sit",
+        "series": 3,
+        "dureeSecRep": 10,
+        "reposSec": 120,
+        "description": "Partir du L-sit, pousser les jambes vers le haut"
+      }
+    ]
+  }
+]

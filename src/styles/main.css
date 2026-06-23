@@ -104,6 +104,30 @@ ul, ol {
 }
 
 /* ============================================================
+   COMPOSANTS PARTAGÉS
+   ============================================================ */
+
+/* Barre de progression */
+.progress-bar {
+  height: 4px;
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}
+
+.progress-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
    UTILITAIRES GLOBAUX
    ============================================================ */
 .sr-only {
