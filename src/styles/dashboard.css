@@ -1,1 +1,330 @@
-/* Styles du tableau de bord */
+/* ============================================================
+   NAV PRINCIPALE
+   ============================================================ */
+.main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-6);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.nav-brand__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-sm);
+  line-height: 1;
+}
+
+.nav-brand__name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-text);
+  background-color: var(--color-surface-alt);
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.nav-link--logout {
+  color: var(--color-text-muted);
+}
+
+.nav-link--logout:hover {
+  color: var(--color-error);
+  background-color: rgba(230, 57, 70, 0.08);
+}
+
+.nav-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* ============================================================
+   DASHBOARD
+   ============================================================ */
+.dashboard {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6);
+}
+
+/* En-tête */
+.dashboard__header {
+  margin-bottom: var(--space-8);
+}
+
+.dashboard__title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-2);
+}
+
+.dashboard__subtitle {
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+}
+
+/* Bannière séance du jour */
+.dashboard__banner {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.banner-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: var(--space-1);
+}
+
+.banner-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: #fff;
+  margin-bottom: var(--space-1);
+}
+
+.banner-meta {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.dashboard__banner .btn--primary {
+  background-color: #fff;
+  color: var(--color-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.dashboard__banner .btn--primary:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Section niveaux */
+.dashboard__niveaux {
+  margin-top: var(--space-4);
+}
+
+/* Grille 4 cartes */
+.niveaux-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+}
+
+/* ============================================================
+   NIVEAU CARD
+   ============================================================ */
+.niveau-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.niveau-card:not(.niveau-card--locked):hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.niveau-card--locked {
+  opacity: 0.55;
+}
+
+/* Header de la carte */
+.niveau-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.niveau-card__num {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+/* Badge */
+.niveau-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+}
+
+.niveau-card__badge--open {
+  background-color: rgba(45, 158, 107, 0.15);
+  color: var(--color-success);
+}
+
+.niveau-card__badge--locked {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-muted);
+}
+
+.icon-lock {
+  width: 11px;
+  height: 11px;
+}
+
+/* Titre & méta */
+.niveau-card__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  line-height: var(--line-height-tight);
+}
+
+.niveau-card__meta {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-top: calc(var(--space-4) * -0.5);
+}
+
+/* Barre de progression */
+.niveau-card__progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.progress-bar {
+  height: 4px;
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}
+
+.progress-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* Boutons dans la carte */
+.btn--sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-text-disabled);
+  border: 1px solid var(--color-border);
+  cursor: not-allowed;
+}
+
+.niveau-card__cta {
+  margin-top: auto;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .dashboard__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .banner-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard__banner .btn--primary {
+    width: 100%;
+  }
+
+  .niveaux-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .niveaux-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-inner {
+    padding: var(--space-3) var(--space-4);
+  }
+}

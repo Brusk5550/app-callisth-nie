@@ -11,6 +11,14 @@ import './styles/main.css'
 const state = {
   isLoggedIn: false,
   currentPage: 'login',
+  progression: {
+    niveaux: [
+      { id: 1, debloque: true,  seancesCompletees: 0 },
+      { id: 2, debloque: false, seancesCompletees: 0 },
+      { id: 3, debloque: false, seancesCompletees: 0 },
+      { id: 4, debloque: false, seancesCompletees: 0 },
+    ]
+  }
 }
 
 // ── Import des pages (lazy via dynamic import) ───────────────────────────────
