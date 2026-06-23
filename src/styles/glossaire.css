@@ -142,6 +142,8 @@
   cursor: pointer;
   text-align: left;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .exercice-card:focus-visible {
@@ -158,6 +160,7 @@
 .exercice-card__image {
   position: relative;
   height: 180px;
+  flex-shrink: 0; /* empêche la zone image de se compresser */
   background-color: var(--color-surface-alt);
   overflow: hidden;
   display: flex;

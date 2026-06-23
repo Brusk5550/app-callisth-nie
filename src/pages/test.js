@@ -319,6 +319,10 @@ function _renderEchec(mainEl, session, test, niveau, state, params, main) {
 // ── Déverrouillage ────────────────────────────────────────────────────────────
 
 function _debloquerNiveauSuivant(niveau, state) {
+  // Marquer le niveau courant comme entièrement complété (5/5)
+  const courant = state.progression.niveaux.find(n => n.id === niveau.id)
+  if (courant) courant.seancesCompletees = 5
+
   const suivant = state.progression.niveaux.find(n => n.id === niveau.id + 1)
   if (suivant) suivant.debloque = true
 }
